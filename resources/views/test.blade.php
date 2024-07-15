@@ -31,6 +31,8 @@
             <strong>ไม่พบกิจกรรม</strong>
         @endforelse
     </ul>
+    <hr>
+    <a href="user">User Page</a>
 @endsection
 
 @include('partials.extra')

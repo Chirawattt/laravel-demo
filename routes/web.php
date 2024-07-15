@@ -17,15 +17,15 @@ use App\Http\Controllers\MemberController;
 
 Route::prefix('user')->group(function () {
     Route::get('/', function() {
-        echo 'ยินดีต้อนรับ หน้าแรกของ User';
+        $id = 2;
+        $name = "chrwyn";
+        echo "ยินดีต้อนรับสู่หน้าแรกของ User<br>";
+        echo "<a href=" . route('user_id_name', ['id' => 1, 'name' => 'chirawatt']) . "> Test </a>";
     });
    
     Route::get('/show/{id}', [userController::class, 'show']);
     
-    Route::get('/{id}/{name?}', function ($id, $name='defaultValue') {
-        echo 'ID ของคุณคือ '.$id.'<br>';
-        echo 'ชื่อของคุณคือ '.$name;
-    })->name('user_id_name?');
+    Route::get('/{id}/{name?}', [userController::class, 'showIdName'])->name('user_id_name');
     
 });
 
@@ -42,6 +42,7 @@ Route::get('/', function () {
     $age = 19;
     $email = 'Chirawat.yana@hotmail.com';
     $activities = [];
+    
 
     return view('test', compact('name', 'age', 'email', 'activities'));
 });

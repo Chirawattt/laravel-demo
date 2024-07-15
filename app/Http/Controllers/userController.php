@@ -9,6 +9,11 @@
         public function show($id) {
             echo 'ID ของคุณคือ: '.$id;
         }
+
+        public function showIdName($id, $name = 'defaultNameValue') {
+            echo 'ID ของคุณคือ: ' . $id . "<br>";
+            echo 'ชื่อของคุณคือ: ' . $name;
+        }
     }
 
 ?>
