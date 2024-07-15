@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\MemberController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,7 +46,8 @@ Route::get('/', function () {
     return view('test', compact('name', 'age', 'email', 'activities'));
 });
 
-Route::resource('member', 'App\Http\Controllers\MemberController');
+// Route::resource('member', 'App\Http\Controllers\MemberController');
+Route::get('/member', [MemberController::class, 'index']);
 
 Route::fallback(function () {
     echo 'ไม่พบหน้าที่คุณต้องการ';
